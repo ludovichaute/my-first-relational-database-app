@@ -2,7 +2,7 @@
     <html lang="en">
         <head>
             <title>COGIP</title>
-            <link rel="stylesheet" type="text/css" href="/views/css/style.css" >
+            <link rel="stylesheet" type="text/css" href="./css/style.css" >
         
             <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 
@@ -30,12 +30,12 @@
                <section>
                
                     <div>
-                      <img src="img_compta.jpeg" id="head_img" alt="..." width="100%" >
+                      <img src="./images/img_compta.jpeg" id="head_img" alt="..." width="100%" >
                     </div>
 
                     <div>
                         <div class="text-center">
-                          <img src="logo_cogip2.png" alt="logo"  width="30%" class="">
+                          <img src="./images/logo_cogip2.png" alt="logo"  width="30%" class="">
                           
                           <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 
