@@ -17,21 +17,18 @@ catch(Exception $e)
 
 $resultat = $bdd->query("SELECT users FROM chrichri");
 
-//On prends dans la table celui qui a les coordonnes inserees 
+$username = $_POST["username"];
+$mdp = sha1($_POST["pass"]);
 
-$requete = $bdd->prepare("SELECT mdp, user FROM chrichri")
-$requete->bindParam(":mdp", $mdp);
+$requete = $bdd->prepare("SELECT mdp, user FROM users WHERE user = :user");
 $requete->bindParam(":user", $username);
-
-$user = $_POST["username"];
-$pmdp = $_POST["pass"];
-$stmt->execute();
-$stmt->closeCursor();
-
-    
-//si ils existe > on le redirige vers la page 
-//    
-//si il existe pas > msg d'erreurs
+$requete->execute();
+$rep = $requete->fetch();
+if ($mdp === $rep[mdp]) {
+    header("Location: localhost:8888/my-first-relational-database-app/views/index.html");
+}else{
+    echo "User ou mot de passe incorrect";
+}
 
 
-
+?>

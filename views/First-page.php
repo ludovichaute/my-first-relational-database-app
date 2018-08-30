@@ -2,7 +2,7 @@
     <html lang="en">
         <head>
             <title>COGIP</title>
-            <link rel="stylesheet" type="text/css" href="style.css" >
+            <link rel="stylesheet" type="text/css" href="/views/css/style.css" >
         
             <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 
