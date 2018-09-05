@@ -11,7 +11,7 @@
                     generatTabHeader();
                 ?>
             </tr>
-            <?php 
+            <?php
                 generatTabRows('LIMIT 5');  
             ?>
         </table>

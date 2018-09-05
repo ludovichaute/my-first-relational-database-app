@@ -1,5 +1,5 @@
 <?php
-    require('../../model/model.php');
+    
     require('../../function/req_facture_list.php');
     require('../header.php');
 
@@ -25,5 +25,9 @@
     </table>
     
 <?php
+
+    
+    
+
 require('../footer.php');
 ?>
