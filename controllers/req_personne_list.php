@@ -14,9 +14,9 @@ require('../model/model.php');
         $i = 0;
         foreach ($test as $key => $value) {
             $i++;
-                echo '<th>'.$key.'</th>';
+                echo '<th scope="col">'.$key.'</th>';
             if (count($test) == $i) {
-                echo '<th>Action</th>';
+                echo '<th scope="col">Action</th>';
             }
         }
         $req->closeCursor(); 

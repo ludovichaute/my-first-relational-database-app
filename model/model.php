@@ -3,7 +3,7 @@
    try
    {
        // On se connecte à MySQL
-       $dbh = new PDO('mysql:host=localhost;dbname=chrichri;charset=utf8', 'root', '');
+       $dbh = new PDO('mysql:host=localhost;dbname=chrichrichrichri;charset=utf8', 'root', 'root');
        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
    
    }   

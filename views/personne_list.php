@@ -7,17 +7,18 @@
 
 <h1>Liste des factures:</h1>
 
-    <table>
-            <tr>
+    <table class="table">
+           <thead class="thead-dark">
+            <tr class="">
                 <?php
-                   generatTabHeader();
+                   generatTabHeaderPers();
                 ?>
             </tr>
-        <?php generatTabRows(''); 
+        <?php generatTabRowsPers(''); 
               
         ?>
-      
-    </table>
+           </thead>
+    </table>@
     
 <?php
     
