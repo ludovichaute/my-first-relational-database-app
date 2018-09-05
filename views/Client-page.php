@@ -1,5 +1,5 @@
 
- <?php session_start (); ?>
+<?php session_start (); ?>
 
 <?php include 'header.php'; ?>
         <body>
@@ -40,4 +40,3 @@
  
       </body>
 
-</html>
