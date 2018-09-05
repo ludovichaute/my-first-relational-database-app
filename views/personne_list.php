@@ -10,10 +10,10 @@
     <table>
             <tr>
                 <?php
-                   generatTabHeader();
+                   generatTabHeaderPers();
                 ?>
             </tr>
-        <?php generatTabRows(''); 
+        <?php generatTabRowsPers(''); 
               
         ?>
       

@@ -5,18 +5,18 @@
 ?>
 <div>
     <h3 class="ml-4">Dernières Factures</h3><a class="ml-4" href="./facture_new.php">Créer une facture</a>
-        <table class="table ml-4">
-           <thead class="thead-dark">
-            <tr>
-                <?php
-                    generatTabHeader();
-                ?>
-            </tr>
-           </thead>
+    <table class="table ml-4">
+        <thead class="thead-dark">
+        <tr>
             <?php
-                generatTabRows('LIMIT 5');  
+                generatTabHeader();
             ?>
-        </table>
+        </tr>
+        </thead>
+        <?php
+            generatTabRows('LIMIT 5');  
+        ?>
+    </table>
     <a href="./facture_list.php">Gérer les factures</a>
 </div>
 <div>
@@ -31,6 +31,7 @@
             generatTabRowsPers('');     
         ?>
     </table>
+    <a href="./personne_list.php">Gérer les personnes</a>
 </div> 
 <div>
 <h3>Dernières entreprises</h3><a href="facture_new.php">Ajouter une entreprise</a>
