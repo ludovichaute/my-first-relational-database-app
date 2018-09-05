@@ -5,7 +5,7 @@
 try
 {
 	// On se connecte à MySQL
-	$bdd = new PDO('mysql:host=localhost;dbname=chrichri;charset=utf8', 'root', 'root');
+	$bdd = new PDO('mysql:host=localhost;dbname=chrichrichrichri;charset=utf8', 'root', 'root');
 }
 catch(Exception $e)
 {
@@ -15,7 +15,7 @@ catch(Exception $e)
 
 // Requête 
 
-$resultat = $bdd->query("SELECT users FROM chrichri");
+$resultat = $bdd->query("SELECT users FROM chrichrichrichri");
 session_start ();
 $username = $_POST["username"];
 $mdp = sha1($_POST["pass"]);
