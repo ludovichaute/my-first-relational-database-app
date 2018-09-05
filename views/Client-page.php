@@ -22,7 +22,7 @@
                   </li>
                 </ul>
                 <span class="navbar-text">
-                <a href="./logout.php">Deconnection</a>
+                <a href="../controllers/logout.php">Deconnection</a>
                 </span>
               </div>
             </nav>
