@@ -2,16 +2,12 @@
 
 require('../model/model.php');
    
-    function generatTabHeader(){
+    function generatTabHeaderPers(){
         global $dbh;
-        $req = $dbh->prepare("SELECT num_facture AS ID,
-        date_facture AS 'Date',
-        nom_societe AS Société,
-        montant,
-        objet
+        $req = $dbh->prepare("SELECT *
         FROM societe 
-        INNER JOIN factures 
-        ON societe.idsociete = factures.idfactures ");
+        INNER JOIN personnes 
+        ON societe.idsociete = personnes.idpersonnes");
         $req->execute();
         $test = $req->fetch(PDO::FETCH_ASSOC);
         $i = 0;
@@ -23,15 +19,15 @@ require('../model/model.php');
             }
         }
         $req->closeCursor(); 
-     
+        $req->execute();
+        echo '<pre>';
+        print_r($req->fetchAll(PDO::FETCH_ASSOC));
+        echo '</pre>';
     }
 
-    // $req->execute();
-    // echo '<pre>';
-    // print_r($req->fetchAll(PDO::FETCH_ASSOC));
-    // echo '</pre>';
+   
 
-    function generatTabRows($limit){
+    function generatTabRowsPers($limit){
         global $dbh;
         $req = $dbh->prepare("SELECT num_facture AS ID,
         date_facture AS 'Date',
@@ -64,25 +60,25 @@ require('../model/model.php');
 
     //fonction edit + recup id
 
-    function factureEdit(){
-        $reqEdit = $dbh->prepare("SELECT *
-        FROM societe 
-        INNER JOIN factures 
-        ON societe.idsociete = factures.idfactures ");
-        $reqEdit->execute();
-        while($row = $reqEdit->fetch(PDO::FETCH_ASSOC)){
-            if ($row['idfactures'] == $_GET['id']) {
-                echo 'test';
-            }
-            echo $row['idfactures']; 
-            foreach ($row as $key => $value) {
-                //idfactures
-                echo '<p>'.$key.' : ' .$value.'</p>';
-            }
-            echo '------';
-        }
-    print_r($_GET);
-    }
+    // function factureEdit(){
+    //     $reqEdit = $dbh->prepare("SELECT *
+    //     FROM societe 
+    //     INNER JOIN factures 
+    //     ON societe.idsociete = factures.idfactures ");
+    //     $reqEdit->execute();
+    //     while($row = $reqEdit->fetch(PDO::FETCH_ASSOC)){
+    //         if ($row['idfactures'] == $_GET['id']) {
+    //             echo 'test';
+    //         }
+    //         echo $row['idfactures']; 
+    //         foreach ($row as $key => $value) {
+    //             //idfactures
+    //             echo '<p>'.$key.' : ' .$value.'</p>';
+    //         }
+    //         echo '------';
+    //     }
+    // print_r($_GET);
+    // }
     
     
 ?>

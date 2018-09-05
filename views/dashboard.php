@@ -1,7 +1,7 @@
 <?php
-    require('../model/model.php');
+    //require('../model/model.php');
     require('../controllers/req_fact_list.php');
-    
+    require('../controllers/req_personne_list.php');
 ?>
 <div>
     <h3>Dernières Factures</h3><a href="./facture_new.php">Créer une facture</a>
@@ -22,11 +22,11 @@
     <table>
         <tr>
             <?php
-                //generatTabHeader();
+                generatTabHeaderPers();
             ?>
         </tr>
         <?php 
-            //generatTabRows();     
+            //generatTabRowsPers();     
         ?>
     </table>
 </div> 
