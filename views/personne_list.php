@@ -21,5 +21,6 @@
     
 <?php
     
-require('footer.php');
+ include 'footer.php';
+?>
   

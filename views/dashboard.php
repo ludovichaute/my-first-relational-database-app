@@ -28,7 +28,7 @@
             ?>
         </tr>
         <?php 
-            //generatTabRowsPers();     
+            generatTabRowsPers('');     
         ?>
     </table>
 </div> 

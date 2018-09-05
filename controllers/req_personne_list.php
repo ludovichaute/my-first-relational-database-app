@@ -4,10 +4,11 @@ require('../model/model.php');
    
     function generatTabHeaderPers(){
         global $dbh;
-        $req = $dbh->prepare("SELECT *
-        FROM societe 
-        INNER JOIN personnes 
-        ON societe.idsociete = personnes.idpersonnes");
+        $req = $dbh->prepare("SELECT
+        nom, prenom, email, phone, nom_societe as Société
+        FROM
+        societe
+            INNER JOIN personnes ON societe.idsociete = personnes.idpersonnes");
         $req->execute();
         $test = $req->fetch(PDO::FETCH_ASSOC);
         $i = 0;
@@ -20,23 +21,21 @@ require('../model/model.php');
         }
         $req->closeCursor(); 
         $req->execute();
-        echo '<pre>';
-        print_r($req->fetchAll(PDO::FETCH_ASSOC));
-        echo '</pre>';
+        // echo '<pre>';
+        // print_r($req->fetchAll(PDO::FETCH_ASSOC));
+        // echo '</pre>';
     }
 
    
 
     function generatTabRowsPers($limit){
         global $dbh;
-        $req = $dbh->prepare("SELECT num_facture AS ID,
-        date_facture AS 'Date',
-        nom_societe AS Société,
-        montant,
-        objet
-        FROM factures
-        LEFT JOIN  societe 
-        ON  factures.idfactures = societe.idsociete ORDER BY date_facture DESC ".$limit."");
+        $req = $dbh->prepare("SELECT
+        nom, prenom, email, phone, 
+        nom_societe
+        FROM
+        societe
+            INNER JOIN personnes ON societe.idsociete = personnes.idpersonnes ORDER BY nom DESC ".$limit."");
         $req->execute();
         while($row = $req->fetch(PDO::FETCH_ASSOC)){
             echo '<tr>';
@@ -46,9 +45,9 @@ require('../model/model.php');
                 $i++;
                 echo '<td>'.$value.'</td>';
                 if (count($row) == $i) {
-                    echo '<td><a href="id='.$row['ID'].'">view</a>
-                    <a href="../views/facture_edit.php?id='.$row['ID'].'">edit</a>
-                    <a href="'.$row['ID'].'">del</a></td>';
+                    echo '<td><a href="id='.$row['nom'].'">view</a>
+                    <a href="../views/personne_edit.php?id='.$row['nom'].'">edit</a>
+                    <a href="'.$row['nom'].'">del</a></td>';
                 }
             }
             echo '</tr>';
