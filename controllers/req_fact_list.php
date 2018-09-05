@@ -17,9 +17,9 @@ require('../model/model.php');
         $i = 0;
         foreach ($test as $key => $value) {
             $i++;
-                echo '<th>'.$key.'</th>';
+                echo '<th scope="col">'.$key.'</th>';
             if (count($test) == $i) {
-                echo '<th>Action</th>';
+                echo '<th scope="col">Action</th>';
             }
         }
         $req->closeCursor(); 
@@ -50,9 +50,12 @@ require('../model/model.php');
                 $i++;
                 echo '<td>'.$value.'</td>';
                 if (count($row) == $i) {
-                    echo '<td><a href="id='.$row['ID'].'">view</a>
-                    <a href="../views/facture_edit.php?id='.$row['ID'].'">edit</a>
-                    <a href="'.$row['ID'].'">del</a></td>';
+                    echo '<td><a href="id='.$row['ID'].'"<i class="far fa-eye"></i>  .</a>
+                    <a href="../views/facture_edit.php?id='.$row['ID'].'"><i class="far fa-edit"></i>
+
+   .</a>
+                    <a href="'.$row['ID'].'"><i class="far fa-trash-alt"></i>
+</a></td>';
                 }
             }
             echo '</tr>';

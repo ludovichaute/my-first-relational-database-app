@@ -4,13 +4,15 @@
     require('../controllers/req_personne_list.php');
 ?>
 <div>
-    <h3>Dernières Factures</h3><a href="./facture_new.php">Créer une facture</a>
-        <table>
+    <h3 class="ml-4">Dernières Factures</h3><a class="ml-4" href="./facture_new.php">Créer une facture</a>
+        <table class="table ml-4">
+           <thead class="thead-dark">
             <tr>
                 <?php
                     generatTabHeader();
                 ?>
             </tr>
+           </thead>
             <?php
                 generatTabRows('LIMIT 5');  
             ?>
