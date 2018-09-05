@@ -72,7 +72,7 @@ Chaque membre du groupe doit faire au moins ceci :
 1. **backend dev : modélisation conceptuelle des données**  
 Évaluation : schéma visuel de la BD relationnelle présent dans le readme (utiliser mysqlWorkbench ou https://www.quickdatabasediagrams.com)
 
-![DB](/views/dbchrichri.PNG)
+![DB](./views/dbchrichri.png)
 
 2. **backend dev : éviter les injections SQL**  
 Évaluation : les scripts php traitant les formulaires empêchent l'injection SQL d'être potentiellement exécutée.
