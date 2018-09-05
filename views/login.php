@@ -16,7 +16,7 @@ catch(Exception $e)
 // Requête 
 
 $resultat = $bdd->query("SELECT users FROM chrichri");
-
+session_start ();
 $username = $_POST["username"];
 $mdp = sha1($_POST["pass"]);
 
@@ -25,7 +25,7 @@ $requete->bindParam(":user", $username);
 $requete->execute();
 $rep = $requete->fetch();
 if ($mdp === $rep[mdp]) {
-    header("Location: localhost:8888/my-first-relational-database-app/views/index.html");
+   header("Location: accueil-page.php");
 }else{
     echo "User ou mot de passe incorrect";
 }
