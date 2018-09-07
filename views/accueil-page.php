@@ -1,5 +1,6 @@
 
  <?php session_start (); ?>
+ <?php require '../controllers/DB_user_type.php'; ?> 
  <?php include 'header.php'; ?>
 
 

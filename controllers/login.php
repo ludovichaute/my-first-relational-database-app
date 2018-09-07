@@ -15,20 +15,21 @@ catch(Exception $e)
 
 // Requête 
 
-$resultat = $bdd->query("SELECT users FROM chrichrichrichri");
 session_start ();
 $username = $_POST["username"];
 $mdp = sha1($_POST["pass"]);
-
+//   :user = la variable 
 $requete = $bdd->prepare("SELECT mdp, user FROM users WHERE user = :user");
 $requete->bindParam(":user", $username);
 $requete->execute();
 $rep = $requete->fetch();
 if ($mdp === $rep[mdp]) {
-   header("Location: accueil-page.php");
+   header("Location: ../views/accueil-page.php");
 }else{
     echo "User ou mot de passe incorrect";
 }
+session_start ();
 
 
+//$session = 
 ?>
